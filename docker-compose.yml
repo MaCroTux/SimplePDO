@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    image: percona
+    container_name: mysql
+    restart: always
+    volumes:
+      - ./sql-dump/:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    environment:
+      - "MYSQL_DATABASE=accounts"
+      - "MYSQL_ROOT_PASSWORD=root"
+
+  phpunit:
+    build: .
+    container_name: php:7.4-mysql-xdebug
+    volumes:
+      - ./:/usr/src/myapp
+    working_dir: /usr/src/myapp
+    links:
+      - mysql
+    restart: always
