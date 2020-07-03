@@ -9,4 +9,6 @@ interface Connection
     public function closeConnection(): void;
 
     public function isConnectionOpen(): bool;
+
+    public function query(string $query, Parameters $params): Query;
 }

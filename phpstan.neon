@@ -1,0 +1,4 @@
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    excludes_analyse:
+        - src/Domain/Query.php
