@@ -59,7 +59,6 @@ class PdoConnection implements Connection
     public function query(string $query, Parameters $params): Query
     {
         $pdoStatement = $this->connection->prepare($query);
-        /** @var Parameter $param */
         foreach ($params->values() as $param) {
             $value = $param->value();
 

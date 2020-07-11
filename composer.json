@@ -2,6 +2,7 @@
     "name": "macrotux/simple-pdo",
     "description": "Pdo manager",
     "require": {
+      "ext-pdo": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.2",

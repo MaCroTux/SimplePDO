@@ -4,24 +4,24 @@ namespace MaCroTux\SimplePdo\Infrastructure\Params;
 
 use MaCroTux\SimplePdo\Domain\Parameter;
 
-class StringParameter implements Parameter
+class PdoIntegerParameter implements Parameter
 {
-    private const PARAM_STR = 2;
+    private const PARAM_INT = 1;
 
     private string $filed;
-    private string $value;
+    private int $value;
     private int $type;
 
-    public function __construct(string $filed, string $value, int $type)
+    public function __construct(string $filed, int $value, int $type)
     {
         $this->filed = $filed;
         $this->value = $value;
         $this->type = $type;
     }
 
-    public static function build(string $field, string $value): self
+    public static function build(string $field, int $value): self
     {
-        return new self($field, $value, \PDO::PARAM_STR);
+        return new self($field, $value, self::PARAM_INT);
     }
 
     public function filed(): string
@@ -31,7 +31,7 @@ class StringParameter implements Parameter
 
     public function value(): string
     {
-        return $this->value;
+        return (string)$this->value;
     }
 
     public function type(): int

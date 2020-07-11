@@ -8,9 +8,9 @@ use MaCroTux\SimplePdo\Domain\Repository;
 
 class PdoRepository implements Repository
 {
-    private Connector $connector;
+    private PdoConnector $connector;
 
-    public function __construct(Connector $connector)
+    public function __construct(PdoConnector $connector)
     {
         $this->connector = $connector;
     }

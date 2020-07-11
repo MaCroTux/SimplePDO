@@ -5,7 +5,7 @@ namespace MaCroTux\SimplePdo\Infrastructure;
 use MaCroTux\SimplePdo\Domain\Connection;
 use MaCroTux\SimplePdo\Domain\ConnectionData;
 
-class Connector
+class PdoConnector
 {
     private Connection $connection;
 

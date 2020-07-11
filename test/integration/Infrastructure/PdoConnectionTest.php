@@ -1,6 +1,6 @@
 <?php
 
-namespace MaCroTux\Test\Integration\SimplePdo\Infrastructure\Connector;
+namespace MaCroTux\Test\Integration\SimplePdo\Infrastructure;
 
 use MaCroTux\SimplePdo\Infrastructure\PdoConnectionData;
 use MaCroTux\SimplePdo\Infrastructure\PdoConnection;
